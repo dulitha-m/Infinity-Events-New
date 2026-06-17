@@ -10,6 +10,17 @@ export default function UpcomingEvents() {
     getEvents().then(({ data }) => setEvents(data)).catch(console.error);
   }, []);
 
+  useEffect(() => {
+    if (!events.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    );
+    const elements = document.querySelectorAll('#events .reveal');
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [events]);
+
   if (!events.length) return null;
 
   const featured = events.filter(e => e.isFeatured);

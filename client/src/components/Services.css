@@ -1,32 +1,48 @@
 .services { padding: 120px 60px; background: var(--black); }
-.services-list { max-width: 900px; margin: 60px auto 0; }
-.svc-item { border-bottom: 1px solid rgba(201,151,58,0.08); overflow: hidden; }
-.svc-header {
-  width: 100%; display: flex; align-items: center;
-  justify-content: space-between; padding: 28px 0;
-  background: none; border: none; color: inherit; text-align: left;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 60px auto 0;
 }
-.svc-left { display: flex; align-items: center; gap: 24px; }
-.svc-num {
-  font-family: 'Bebas Neue', sans-serif; font-size: 20px;
-  color: rgba(201,151,58,0.25); min-width: 32px;
+.svc-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--gold);
+  padding: 24px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
 }
-.svc-name {
-  font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700;
-  letter-spacing: 0.5px; color: var(--white); transition: color 0.3s;
+.svc-card:hover {
+  background: rgba(201, 151, 58, 0.03);
+  border-color: rgba(201, 151, 58, 0.2);
+  transform: translateY(-4px);
 }
-.svc-header:hover .svc-name { color: var(--gold); }
-.svc-toggle {
-  width: 32px; height: 32px;
-  border: 1px solid rgba(201,151,58,0.2); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; color: var(--gold); transition: transform 0.3s, background 0.3s;
+.svc-card-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--gold);
+  opacity: 0.6;
 }
-.svc-item.open .svc-toggle { transform: rotate(45deg); background: rgba(201,151,58,0.1); }
-.svc-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-.svc-item.open .svc-body { max-height: 200px; }
-.svc-content {
-  padding: 0 0 28px 56px;
-  font-size: 13px; line-height: 1.8; color: rgba(245,240,232,0.45); font-weight: 300;
+.svc-card-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: var(--white);
 }
-@media (max-width: 768px) { .services { padding: 80px 24px; } }
+@media (max-width: 992px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .services { padding: 80px 24px; }
+}
+@media (max-width: 576px) {
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .svc-card { padding: 20px; }
+}

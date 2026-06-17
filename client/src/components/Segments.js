@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { getSegments } from '../api';
+import Modal from './Modal';
 import './Segments.css';
 
 export default function Segments() {
   const [segments, setSegments] = useState([]);
+  const [selectedSegment, setSelectedSegment] = useState(null);
 
   useEffect(() => {
     getSegments().then(({ data }) => setSegments(data)).catch(console.error);
@@ -20,11 +22,12 @@ export default function Segments() {
           <div
             key={seg._id}
             className={`bento-card ${seg.isWide ? 'wide' : ''}`}
+            onClick={() => setSelectedSegment(seg)}
             style={{
               '--accent': seg.accentColor,
               '--span': seg.gridSpan,
               background: seg.imageUrl
-                ? `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(${seg.imageUrl})`
+                ? `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("${seg.imageUrl}")`
                 : seg.bgGradient
             }}
           >
@@ -39,6 +42,12 @@ export default function Segments() {
           </div>
         ))}
       </div>
+
+      <Modal 
+        isOpen={!!selectedSegment} 
+        onClose={() => setSelectedSegment(null)} 
+        item={selectedSegment} 
+      />
     </section>
   );
 }

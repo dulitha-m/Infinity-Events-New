@@ -18,7 +18,7 @@
   color: var(--white);
 }
 .logo-svg { width: 38px; height: 22px; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
 .nav-btn {
   font-family: 'Syne', sans-serif;
   font-size: 11px; font-weight: 600;
@@ -96,7 +96,13 @@
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
+  .nav-links { gap: 14px; }
+  .navbar { padding: 28px 24px; }
+  .navbar.scrolled { padding: 16px 24px; }
+}
+
+@media (max-width: 1150px) {
   .navbar { padding: 16px 24px; }
   .navbar.scrolled { padding: 14px 24px; }
   .nav-links { display: none; }

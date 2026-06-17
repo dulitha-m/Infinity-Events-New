@@ -62,7 +62,7 @@ export default function Testimonials() {
   const t = TESTIMONIALS[active];
 
   return (
-    <section className="testimonials">
+    <section className="testimonials" id="testimonials">
       <div className="testi-glow" style={{ '--t-accent': t.accent }} />
       <div className="testi-inner">
         <div className="testi-left reveal">

@@ -17,7 +17,18 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const NAV_ITEMS = ['about','segments','services','stage','clients','highlights'];
+  const NAV_ITEMS = [
+    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'segments', label: 'Segments' },
+    { id: 'services', label: 'Services' },
+    { id: 'stage', label: 'Stage' },
+    { id: 'gallery', label: 'Gallery' },
+    { id: 'highlights', label: 'Highlights' },
+    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'clients', label: 'Clients' },
+    { id: 'events', label: 'Events' }
+  ];
 
   return (
     <>
@@ -33,10 +44,10 @@ export default function Navbar() {
         </div>
 
         <ul className="nav-links">
-          {NAV_ITEMS.map(id => (
-            <li key={id}>
-              <button onClick={() => scrollTo(id)} className="nav-btn">
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+          {NAV_ITEMS.map(item => (
+            <li key={item.id}>
+              <button onClick={() => scrollTo(item.id)} className="nav-btn">
+                {item.label}
               </button>
             </li>
           ))}
@@ -59,10 +70,10 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <ul className="mobile-links">
-          {NAV_ITEMS.map(id => (
-            <li key={id}>
-              <button onClick={() => scrollTo(id)} className="mobile-btn">
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+          {NAV_ITEMS.map(item => (
+            <li key={item.id}>
+              <button onClick={() => scrollTo(item.id)} className="mobile-btn">
+                {item.label}
               </button>
             </li>
           ))}

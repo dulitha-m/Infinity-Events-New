@@ -5,7 +5,7 @@ import './Hero.css';
 const SLIDES = [
   {
     id: 1,
-    img: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1920&q=90',
+    img: '/images/popup_concerts.png',
     label: 'Live Entertainment',
     title: 'International\nConcerts',
     sub: 'Akon · Sean Paul · Priyanka Chopra',
@@ -13,7 +13,7 @@ const SLIDES = [
   },
   {
     id: 2,
-    img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=90',
+    img: '/images/popup_outdoor.png',
     label: 'Mega Festivals',
     title: 'Music\nFestivals',
     sub: 'Sun Fest 2015 · Maldives Tourist Arrival Festival',
@@ -21,7 +21,7 @@ const SLIDES = [
   },
   {
     id: 3,
-    img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=90',
+    img: '/images/popup_corporate.png',
     label: 'Corporate & Brand',
     title: 'Corporate\nExperiences',
     sub: 'HSBC · Microsoft · Nestlé · Unilever · Toyota',
@@ -29,7 +29,7 @@ const SLIDES = [
   },
   {
     id: 4,
-    img: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1920&q=90',
+    img: '/images/popup_state.png',
     label: 'State & Government',
     title: 'State\nProductions',
     sub: 'CHOGM 2013 · South Asia\'s Largest Indoor LED Wall',
@@ -37,7 +37,7 @@ const SLIDES = [
   },
   {
     id: 5,
-    img: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=90',
+    img: '/images/popup_fashion.png',
     label: 'Fashion & Pageants',
     title: 'Fashion\nShowcase',
     sub: 'Miss Universe Sri Lanka · Mister International SL',

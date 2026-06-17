@@ -1,0 +1,77 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(13, 13, 20, 0.85);
+  border: 1px solid rgba(201, 151, 58, 0.3);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none; /* User body style has custom cursor, hover clicks overlay */
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s, border-color 0.3s, background 0.3s;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.scroll-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 151, 58, 0.4) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Hover styles */
+.scroll-to-top:hover {
+  background: rgba(13, 13, 20, 0.95);
+  border-color: var(--gold);
+  color: var(--white);
+  box-shadow: 0 15px 35px rgba(201, 151, 58, 0.25);
+}
+
+.scroll-to-top:hover .scroll-icon {
+  transform: translateY(-4px);
+}
+
+.scroll-to-top:hover .scroll-glow {
+  opacity: 1;
+}
+
+/* Responsive query */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+  }
+  .scroll-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

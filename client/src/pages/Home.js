@@ -12,6 +12,7 @@ import Testimonials from '../components/Testimonials';
 import Clients from '../components/Clients';
 import UpcomingEvents from '../components/UpcomingEvents';
 import Contact from '../components/Contact';
+import ScrollToTop from '../components/ScrollToTop';
 
 export default function Home() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function Home() {
       <Clients />
       <UpcomingEvents />
       <Contact />
+      <ScrollToTop />
     </>
   );
 }

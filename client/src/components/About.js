@@ -1,13 +1,20 @@
 import './About.css';
 
-const MISSIONS = [
-  { num: '01', text: 'Work with clients for their long-term benefit' },
-  { num: '02', text: 'Constantly research & develop new strategies, technologies and skills' },
-  { num: '03', text: 'Provide exceptional service with constant communication' },
-  { num: '04', text: 'Balance creativity with competent execution for outstanding results' },
+const SEGMENTS = [
+  'Booking, Promoting, Managing International Artists , Entertainers, Performers',
+  'Booking, Promoting, Managing International Events',
+  'Booking, promoting, Managing fashion events and models',
+  'Congresses and Conventions',
+  'Cultural, Sports and Political Events,',
+  'Trade Fairs, Exhibitions, Social & Private Events for Professionals, Corporate Clientele and the General Public'
 ];
 
-const HUBS = ['🇺🇸 USA','🇦🇪 Dubai','🇲🇻 Maldives','🇮🇩 Indonesia','🇱🇰 Sri Lanka'];
+const MISSIONS = [
+  'To work with our clients for their long term benefit',
+  'To constantly research and develop new strategies, technologies and skills',
+  'To provide an exceptional service',
+  'To maintain constant communication'
+];
 
 export default function About() {
   return (
@@ -15,31 +22,52 @@ export default function About() {
       <div className="about-watermark">INFINITY</div>
 
       <div className="about-left reveal">
-        <p className="eyebrow">Who We Are</p>
-        <h2 className="section-title">CRAFTING<br/>THE<br/>EXTRAORDINARY</h2>
+        <p className="eyebrow">ABOUT US</p>
+        <h2 className="section-title">INFINITY EVENTS &<br />ENTERTAINMENT ™</h2>
+        
         <p className="about-text">
-          <strong>Infinity Events & Entertainment™</strong> is a global provider of integrated solutions and services for events, spanning Sri Lanka and overseas. Fuelled by passion and big ideas, we deliver customized, strategic event experiences where guests connect in ways that are <strong>personally relevant and unforgettable</strong>.
+          Infinity Events & Entertainment ™ is a provider of integrated solutions and services for events in Sri Lanka and Over-seas, covering the market’s six main segments:
         </p>
+
+        <ul className="about-segments-list">
+          {SEGMENTS.map((seg, idx) => (
+            <li key={idx} className="about-segment-item">
+              <span className="about-bullet">•</span>
+              <span className="about-segment-text">{seg}</span>
+            </li>
+          ))}
+        </ul>
+
         <p className="about-text mt">
-          From intimate private galas to 2,000-person state dinners for Commonwealth Heads of Government — we balance <strong>creative vision with flawless execution</strong>.
+          We are a full-service event planning company that provides complete planning, consulting, and supervision for both corporate and social events. Fuelled by passion and big ideas, we provide customized, strategic event experiences where guests connect with our clients in ways that are personally relevant and memorable! Our team offers the creative vision, professionalism, and event expertise to create spectacular events with a constant eye towards detail, quality, originality, and results. Infinity Events & Entertainment ™, believes 100% in the team we have put together.
         </p>
-        <div className="globe-tags">
-          {HUBS.map(h => <span className="globe-tag" key={h}>{h}</span>)}
-        </div>
+
+        <p className="about-text mt">
+          Everything from the invitations, cocktails, wine list, music, flowers and menu will receive our expert attention so that you can relax and be a welcoming host to your guests.
+        </p>
       </div>
 
-      <div className="about-visual reveal">
-        <div className="visual-photo" />
-        <div className="visual-glow" />
+      <div className="about-right reveal">
+        <p className="eyebrow">OUR MISSION</p>
         <div className="mission-list">
-          {MISSIONS.map(m => (
-            <div className="mission-item" key={m.num}>
-              <span className="mission-num">{m.num}</span>
-              <p className="mission-text">{m.text}</p>
+          {MISSIONS.map((m, idx) => (
+            <div className="mission-item" key={idx}>
+              <span className="mission-num">0{idx + 1}</span>
+              <p className="mission-text">{m}</p>
             </div>
           ))}
+        </div>
+
+        <div className="philosophy-box">
+          <p className="philosophy-highlight">
+            Successful projects require a balance of creativity and competent execution. These elements need to work together to achieve outstanding results. Too often a great idea is let down by poor production techniques, or an idea is too production orientated or over-produced and lacking in creativity.
+          </p>
+          <p className="philosophy-text mt">
+            We offer our clients the peace of mind that comes with having a solid, secure and professional organisation dedicated to create exemplary productions and events.
+          </p>
         </div>
       </div>
     </section>
   );
 }
+

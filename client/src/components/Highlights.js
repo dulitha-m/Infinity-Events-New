@@ -4,12 +4,12 @@ import './Highlights.css';
 
 // Fallback images for highlight cards when no imageUrl is set
 const FALLBACK_IMAGES = [
-  'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80', // concert crowd
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80', // conference LED
-  'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&q=80', // festival stage
-  'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80', // awards ceremony
-  'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80', // fashion show
-  'https://images.unsplash.com/photo-1488229297570-58520851e868?w=800&q=80', // corporate event
+  '/images/popup_concerts.png', // concert crowd
+  '/images/popup_state.png',    // conference LED / State Event
+  '/images/popup_outdoor.png',  // festival stage
+  '/images/popup_theatre.png',  // awards ceremony / Performing Arts
+  '/images/popup_fashion.png',  // fashion show
+  '/images/popup_corporate.png',// corporate event
 ];
 
 export default function Highlights() {

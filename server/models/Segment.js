@@ -12,6 +12,9 @@ const segmentSchema = new mongoose.Schema({
   gridSpan: { type: Number, default: 4 },
   isWide: { type: Boolean, default: false },
   isActive: { type: Boolean, default: true },
+  description: { type: String, default: '' },
+  details: { type: String, default: '' },
+  offerings: { type: [String], default: [] },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Segment', segmentSchema);
