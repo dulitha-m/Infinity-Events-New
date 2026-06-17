@@ -1,0 +1,74 @@
+.testimonials {
+  padding: 120px 60px; background: var(--black);
+  position: relative; overflow: hidden;
+}
+.testi-glow {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,151,58,0.07), transparent 70%);
+  top: 50%; left: -200px; transform: translateY(-50%);
+  pointer-events: none; transition: background 1s ease;
+}
+.testi-inner {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 100px;
+  align-items: center; max-width: 1200px; margin: 0 auto;
+}
+.testi-dots { display: flex; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+.testi-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 1px solid rgba(245,240,232,0.15);
+  background: transparent; transition: all 0.4s;
+}
+.testi-counter { display: flex; align-items: baseline; gap: 6px; margin-top: 32px; }
+.testi-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--white); line-height: 1; }
+.testi-sep { font-size: 20px; color: rgba(245,240,232,0.12); }
+.testi-total { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: rgba(245,240,232,0.18); }
+.testi-right { position: relative; }
+.testi-card {
+  background: rgba(201,151,58,0.03);
+  border: 1px solid rgba(201,151,58,0.1);
+  padding: 52px 52px 44px; position: relative;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.testi-card.fading { opacity: 0; transform: translateY(12px); }
+.testi-category {
+  display: inline-block;
+  font-family: 'Syne', sans-serif; font-size: 9px;
+  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  border: 1px solid; padding: 4px 12px; margin-bottom: 24px;
+}
+.testi-quote-mark {
+  font-family: Georgia, serif; font-size: 100px; line-height: 0.7;
+  opacity: 0.2; margin-bottom: 16px; display: block;
+}
+.testi-quote {
+  font-size: 16px; line-height: 1.9; color: rgba(245,240,232,0.7);
+  font-weight: 300; font-style: italic; margin-bottom: 40px;
+}
+.testi-author {
+  display: flex; align-items: center; gap: 16px;
+  padding-top: 28px; border-top: 1px solid rgba(201,151,58,0.1);
+}
+.testi-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(201,151,58,0.1); border: 1px solid rgba(201,151,58,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);
+  flex-shrink: 0;
+}
+.testi-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
+.testi-role { font-size: 12px; color: rgba(245,240,232,0.3); font-weight: 300; margin-top: 2px; }
+.testi-nav { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-end; }
+.testi-arrow {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(201,151,58,0.15);
+  background: transparent; color: rgba(245,240,232,0.35);
+  font-size: 16px; display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.testi-arrow:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,151,58,0.06); }
+@media (max-width: 768px) {
+  .testimonials { padding: 80px 24px; }
+  .testi-inner { grid-template-columns: 1fr; gap: 40px; }
+  .testi-card { padding: 32px 28px; }
+  .testi-quote { font-size: 14px; }
+}

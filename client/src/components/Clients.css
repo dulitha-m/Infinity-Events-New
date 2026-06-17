@@ -1,0 +1,32 @@
+.clients { padding: 120px 60px; background: var(--deep); }
+.client-tabs { display: flex; gap: 4px; margin-bottom: 48px; }
+.tab-btn {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  padding: 12px 28px; background: transparent;
+  border: 1px solid rgba(245,240,232,0.08); color: rgba(245,240,232,0.3);
+  transition: all 0.3s;
+}
+.tab-btn.active {
+  background: rgba(201,151,58,0.1);
+  border-color: var(--gold); color: var(--gold);
+}
+.logos-grid { display: flex; flex-wrap: wrap; gap: 2px; }
+.logo-cell {
+  flex: 1 1 160px; height: 88px;
+  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+  transition: all 0.3s;
+}
+.logo-cell:hover {
+  background: rgba(201,151,58,0.07);
+  border-color: rgba(201,151,58,0.2);
+}
+.logo-name {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; text-align: center;
+  color: rgba(245,240,232,0.22); transition: color 0.3s;
+}
+.logo-cell:hover .logo-name { color: rgba(245,240,232,0.75); }
+@media (max-width: 768px) { .clients { padding: 80px 24px; } }

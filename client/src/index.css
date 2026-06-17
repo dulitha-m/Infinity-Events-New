@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --black: #04040a;
+  --deep: #07070f;
+  --card: #0b0b18;
+
+  /* Premium Gold */
+  --gold: #C9973A;
+  --gold-light: #E8B84B;
+  --gold-rgb: 201, 151, 58;
+
+  /* Premium Crimson / Rose */
+  --crimson: #C2185B;
+  --crimson-rgb: 194, 24, 91;
+
+  /* Electric Violet */
+  --violet: #7C3AED;
+  --violet-rgb: 124, 58, 237;
+
+  /* Ice Blue accent */
+  --ice: #38BDF8;
+  --ice-rgb: 56, 189, 248;
+
+  /* Aliases kept for existing components */
+  --cyan: #C9973A;
+  --cyan-rgb: 201, 151, 58;
+  --pink: #C2185B;
+  --pink-rgb: 194, 24, 91;
+  --purple: #7C3AED;
+
+  --white: #F5F0E8;
+  --white-dim: rgba(245, 240, 232, 0.55);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+a { text-decoration: none; color: inherit; cursor: none; }
+button { cursor: none; }
+
+.reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Global eyebrow override */
+.eyebrow {
+  font-family: 'Syne', sans-serif; font-size: 10px;
+  font-weight: 700; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.92; letter-spacing: 2px; color: var(--white); margin-bottom: 32px;
+}

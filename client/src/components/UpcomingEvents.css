@@ -1,0 +1,263 @@
+/* ===== UPCOMING EVENTS SECTION ===== */
+.upcoming-events {
+  padding: 120px 60px;
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+}
+.upcoming-events::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--cyan), var(--pink), transparent);
+  opacity: 0.4;
+}
+
+.ue-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.ue-subtitle {
+  font-size: 14px;
+  color: rgba(240,238,232,0.4);
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== FEATURED HERO CARD ===== */
+.ue-featured {
+  position: relative;
+  margin-bottom: 48px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ue-hero-card {
+  width: 100%;
+  min-height: 480px;
+  display: none;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ue-hero-card.active { display: flex; }
+.ue-hero-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(var(--ev-accent, 255,184,0), 0.12), transparent 60%);
+  pointer-events: none;
+}
+.ue-hero-content {
+  position: relative; z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+.ue-hero-left { flex: 1; }
+.ue-category-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  border: 1px solid; padding: 4px 12px;
+  margin-bottom: 16px;
+}
+.ue-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.ue-hero-artist {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.ue-hero-desc {
+  font-size: 13px;
+  color: rgba(240,238,232,0.55);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+.ue-hero-meta { display: flex; gap: 24px; margin-bottom: 28px; }
+.ue-meta-item {
+  font-size: 12px;
+  color: rgba(240,238,232,0.5);
+  letter-spacing: 1px;
+}
+.ue-ticket-btn {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px;
+  padding: 14px 32px;
+  background: var(--ev-accent, var(--cyan));
+  color: #000;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.ue-ticket-btn:hover {
+  opacity: 0.85;
+  box-shadow: 0 0 40px rgba(255,184,0,0.3);
+  transform: translateY(-2px);
+}
+
+/* Date Block */
+.ue-hero-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 36px;
+  border: 1px solid rgba(var(--ev-accent, 255,184,0), 0.3);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.ue-date-day {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px; line-height: 1;
+  color: var(--cyan);
+}
+.ue-date-month {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 4px;
+  color: rgba(240,238,232,0.6);
+  margin-top: 2px;
+}
+.ue-date-year {
+  font-size: 11px;
+  color: rgba(240,238,232,0.35);
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+/* Dots */
+.ue-featured-dots {
+  position: absolute; bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 10;
+}
+.ue-dot {
+  width: 28px; height: 3px;
+  background: rgba(255,255,255,0.2);
+  border: none; cursor: none;
+  transition: all 0.3s;
+}
+.ue-dot.active {
+  background: var(--cyan);
+  width: 48px;
+}
+
+/* ===== EVENTS GRID ===== */
+.ue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2px;
+}
+.ue-card {
+  position: relative;
+  background: #0a0a0f;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  display: flex; flex-direction: column;
+}
+.ue-card:hover { transform: translateY(-4px); z-index: 2; }
+.ue-card-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.ue-card:hover .ue-card-img { transform: scale(1.05); }
+.ue-card-img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+}
+.ue-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ue-card-top {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.ue-card-date {
+  font-family: 'Syne', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(240,238,232,0.35);
+}
+.ue-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px; letter-spacing: 1px;
+  color: var(--white); line-height: 1.1;
+}
+.ue-card-artist {
+  font-size: 11px; font-weight: 600;
+  color: var(--cyan); letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.ue-card-location {
+  font-size: 11px;
+  color: rgba(240,238,232,0.4);
+  letter-spacing: 1px;
+}
+.ue-card-desc {
+  font-size: 12px;
+  color: rgba(240,238,232,0.45);
+  line-height: 1.6; font-weight: 300;
+  margin-top: 4px;
+  flex: 1;
+}
+.ue-card-link {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px;
+  text-decoration: none;
+  margin-top: 12px;
+  transition: opacity 0.2s;
+}
+.ue-card-link:hover { opacity: 0.7; }
+.ue-card-border {
+  position: absolute; inset: 0;
+  border: 1px solid rgba(255,255,255,0.04);
+  pointer-events: none;
+  transition: border-color 0.4s;
+}
+.ue-card:hover .ue-card-border { border-color: var(--ev-accent); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .upcoming-events { padding: 80px 24px; }
+  .ue-hero-card { min-height: 520px; }
+  .ue-hero-content {
+    flex-direction: column-reverse;
+    padding: 32px 24px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .ue-hero-date-block { flex-direction: row; gap: 16px; padding: 16px 24px; min-width: unset; width: 100%; }
+  .ue-date-day { font-size: 40px; }
+  .ue-grid { grid-template-columns: 1fr; }
+}
