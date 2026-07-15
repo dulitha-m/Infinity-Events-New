@@ -8,12 +8,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="footer-brand">
           <div className="footer-logo">
-            <svg viewBox="0 0 48 28" fill="none" className="footer-svg">
-              <ellipse cx="14" cy="14" rx="10" ry="10" stroke="white" strokeWidth="2" fill="none" opacity="0.4"/>
-              <ellipse cx="34" cy="14" rx="10" ry="10" stroke="white" strokeWidth="2" fill="none" opacity="0.4"/>
-              <line x1="6" y1="5" x2="42" y2="23" stroke="white" strokeWidth="1.5" opacity="0.3"/>
-            </svg>
-            <span className="footer-logo-text">INFINITY EVENTS & ENTERTAINMENT™</span>
+            <img src="/images/Logo.png" alt="Infinity Logo" className="footer-logo-img" />
           </div>
           <p className="footer-tagline">Total Event Solutions · Beyond Boundaries</p>
           <div className="footer-hubs">

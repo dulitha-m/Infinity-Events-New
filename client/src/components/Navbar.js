@@ -23,9 +23,7 @@ export default function Navbar() {
     { id: 'segments', label: 'Segments' },
     { id: 'services', label: 'Services' },
     { id: 'stage', label: 'Stage' },
-    { id: 'gallery', label: 'Gallery' },
     { id: 'highlights', label: 'Highlights' },
-    { id: 'testimonials', label: 'Testimonials' },
     { id: 'clients', label: 'Clients' },
     { id: 'events', label: 'Events' }
   ];
@@ -34,13 +32,7 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <svg viewBox="0 0 48 28" fill="none" className="logo-svg">
-            <ellipse cx="14" cy="14" rx="10" ry="10" stroke="white" strokeWidth="2.5" fill="none"/>
-            <ellipse cx="34" cy="14" rx="10" ry="10" stroke="white" strokeWidth="2.5" fill="none"/>
-            <line x1="6" y1="5" x2="42" y2="23" stroke="white" strokeWidth="2" opacity="0.6"/>
-            <line x1="6" y1="3" x2="42" y2="21" stroke="white" strokeWidth="1.5" opacity="0.3"/>
-          </svg>
-          INFINITY
+          <img src="/images/Logo.png" alt="Infinity Logo" className="nav-logo-img" />
         </div>
 
         <ul className="nav-links">

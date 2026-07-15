@@ -8,7 +8,6 @@ import Services from '../components/Services';
 import Stage3D from '../components/Stage3D';
 import Gallery from '../components/Gallery';
 import Highlights from '../components/Highlights';
-import Testimonials from '../components/Testimonials';
 import Clients from '../components/Clients';
 import UpcomingEvents from '../components/UpcomingEvents';
 import Contact from '../components/Contact';
@@ -35,7 +34,6 @@ export default function Home() {
       <Stage3D />
       <Gallery />
       <Highlights />
-      <Testimonials />
       <Clients />
       <UpcomingEvents />
       <Contact />
