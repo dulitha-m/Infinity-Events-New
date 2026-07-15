@@ -41,21 +41,12 @@
     0 0 50px -15px var(--accent, #FF2D78),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   animation: slideUpModal 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent, #FF2D78) transparent;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .modal-card::-webkit-scrollbar {
-  width: 4px;
-}
-
-.modal-card::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.modal-card::-webkit-scrollbar-thumb {
-  background-color: var(--accent, #FF2D78);
-  border-radius: 2px;
+  display: none; /* Chrome, Safari and Opera */
 }
 
 @keyframes slideUpModal {

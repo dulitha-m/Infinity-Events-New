@@ -22,9 +22,7 @@ export default function Navbar() {
     { id: 'about', label: 'About' },
     { id: 'segments', label: 'Segments' },
     { id: 'services', label: 'Services' },
-    { id: 'stage', label: 'Stage' },
     { id: 'highlights', label: 'Highlights' },
-    { id: 'clients', label: 'Clients' },
     { id: 'events', label: 'Events' }
   ];
 
