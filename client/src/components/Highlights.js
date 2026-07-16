@@ -30,11 +30,10 @@ export default function Highlights() {
             className="hl-card"
             style={{ '--h-accent': h.accentColor }}
           >
-            {/* Real photographic background */}
             <div
               className="hl-photo"
               style={{
-                backgroundImage: `url(${h.imageUrl || FALLBACK_IMAGES[idx % FALLBACK_IMAGES.length]})`
+                backgroundImage: `url("${h.imageUrl || FALLBACK_IMAGES[idx % FALLBACK_IMAGES.length]}")`
               }}
             />
             {/* Gradient overlay */}

@@ -5,44 +5,44 @@ import './Gallery.css';
 const GALLERY_ITEMS = [
   {
     id: 1,
-    img: '/images/popup_concerts.png',
+    img: '/images/Hero1.jpg',
     label: 'Live Concert',
     title: 'International Artist Productions',
     size: 'tall',
   },
   {
     id: 2,
-    img: '/images/popup_outdoor.png',
-    label: 'Festivals',
-    title: 'Outdoor Music Festivals',
+    img: '/images/Fashion.jpg',
+    label: 'Fashion',
+    title: 'High Fashion & Runway Shows',
     size: 'normal',
   },
   {
     id: 3,
-    img: '/images/popup_corporate.png',
-    label: 'Corporate',
-    title: 'Brand & Corporate Events',
+    img: '/images/Wedding.jpg',
+    label: 'Weddings',
+    title: 'Dream Wedding Celebrations',
     size: 'normal',
   },
   {
     id: 4,
-    img: '/images/popup_state.png',
-    label: 'State Events',
-    title: 'Gala Dinners & State Events',
+    img: '/images/Social.jpg',
+    label: 'Social Events',
+    title: 'Vibrant Festivals & Social Galas',
     size: 'wide',
   },
   {
     id: 5,
-    img: '/images/popup_fashion.png',
-    label: 'Fashion',
-    title: 'Fashion Shows & Pageants',
-    size: 'normal',
+    img: '/images/Wedding2.jpg',
+    label: 'Ceremonies',
+    title: 'Exquisite Wedding Ceremonies',
+    size: 'wide',
   },
   {
     id: 6,
-    img: '/images/popup_theatre.png',
-    label: 'Theatre',
-    title: 'Theatre & Performing Arts',
+    img: '/images/Art.jpg',
+    label: 'Performing Arts',
+    title: 'Theatre & Lighting Masterpieces',
     size: 'normal',
   },
 ];
@@ -68,7 +68,7 @@ export default function Gallery() {
           >
             <div
               className="gallery-img"
-              style={{ backgroundImage: `url(${item.img})` }}
+              style={{ backgroundImage: `url("${item.img}")` }}
             />
             <div className="gallery-overlay">
               <span className="gallery-label">{item.label}</span>

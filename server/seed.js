@@ -253,18 +253,33 @@ async function seed() {
     console.log('✅ Services database synchronized (seeded 29 capabilities)');
 
     // Seed Highlights
-    const hlCount = await Highlight.countDocuments();
-    if (!hlCount) {
-      await Highlight.insertMany([
-        { order:1, year:'2013', tag:'State Event', name:'CHOGM 2013', description:'2,000-pax formal dinner hosted by the President of Sri Lanka. South Asia\'s Largest Indoor LED Wall Solution.', accentColor:'#FF2D78', bgGradient:'linear-gradient(135deg,#FF2D78,#9B30FF)' },
-        { order:2, year:'2015', tag:'Live Concert', name:'AKON LIVE Maldives', description:'Maldives Tourist Arrival Music Festival — full production, contracting, PR, VIP, equipment and stage coordination.', accentColor:'#00F5FF', bgGradient:'linear-gradient(135deg,#00F5FF,#9B30FF)' },
-        { order:3, year:'2015', tag:'Music Festival', name:'SUN FEST 2015', description:'One of Sri Lanka\'s landmark outdoor music festivals featuring international headliners and world-class production.', accentColor:'#FFB800', bgGradient:'linear-gradient(135deg,#FFB800,#FF2D78)' },
-        { order:4, year:'2018', tag:'Awards Show', name:'Hiru Golden Film Awards', description:'Spectacular pyrotechnics, LED walls and choreography for Sri Lanka\'s biggest film awards ceremony.', accentColor:'#9B30FF', bgGradient:'linear-gradient(135deg,#9B30FF,#FF2D78)' },
-        { order:5, year:'Ongoing', tag:'Pageant', name:'Miss Universe Sri Lanka', description:'Full production and technical direction for the nation\'s premier international pageant qualifier.', accentColor:'#FF2D78', bgGradient:'linear-gradient(135deg,#FF2D78,#FFB800)' },
-        { order:6, year:'Ongoing', tag:'Corporate', name:'Fortune 500 Events', description:'Microsoft, HSBC, IBM, Cisco, Unilever, Toyota — delivering world-class brand experiences for global giants.', accentColor:'#00F5FF', bgGradient:'linear-gradient(135deg,#00F5FF,#FFB800)' },
-      ]);
-      console.log('✅ Highlights seeded');
+    const highlightsData = [
+      { order:1, year:'2013', tag:'State Event', name:'CHOGM 2013', description:'2,000-pax formal dinner hosted by the President of Sri Lanka. South Asia\'s Largest Indoor LED Wall Solution.', imageUrl:'/images/CHOGM 2013.jpg', accentColor:'#FF2D78', bgGradient:'linear-gradient(135deg,#FF2D78,#9B30FF)' },
+      { order:2, year:'2015', tag:'Live Concert', name:'AKON LIVE Maldives', description:'Maldives Tourist Arrival Music Festival — full production, contracting, PR, VIP, equipment and stage coordination.', accentColor:'#00F5FF', bgGradient:'linear-gradient(135deg,#00F5FF,#9B30FF)' },
+      { order:3, year:'2015', tag:'Music Festival', name:'SUN FEST 2015', description:'One of Sri Lanka\'s landmark outdoor music festivals featuring international headliners and world-class production.', accentColor:'#FFB800', bgGradient:'linear-gradient(135deg,#FFB800,#FF2D78)' },
+      { order:4, year:'2018', tag:'Awards Show', name:'Hiru Golden Film Awards', description:'Spectacular pyrotechnics, LED walls and choreography for Sri Lanka\'s biggest film awards ceremony.', accentColor:'#9B30FF', bgGradient:'linear-gradient(135deg,#9B30FF,#FF2D78)' },
+      { order:5, year:'Ongoing', tag:'Pageant', name:'Miss Universe Sri Lanka', description:'Full production and technical direction for the nation\'s premier international pageant qualifier.', accentColor:'#FF2D78', bgGradient:'linear-gradient(135deg,#FF2D78,#FFB800)' },
+      { order:6, year:'Ongoing', tag:'Corporate', name:'Fortune 500 Events', description:'Microsoft, HSBC, IBM, Cisco, Unilever, Toyota — delivering world-class brand experiences for global giants.', accentColor:'#00F5FF', bgGradient:'linear-gradient(135deg,#00F5FF,#FFB800)' }
+    ];
+
+    for (const hl of highlightsData) {
+      await Highlight.updateOne(
+        { order: hl.order },
+        { 
+          $set: { 
+            year: hl.year,
+            tag: hl.tag,
+            name: hl.name,
+            description: hl.description,
+            imageUrl: hl.imageUrl,
+            accentColor: hl.accentColor,
+            bgGradient: hl.bgGradient
+          } 
+        },
+        { upsert: true }
+      );
     }
+    console.log('✅ Highlights database synchronized');
 
     // Seed Clients
     const clientCount = await Client.countDocuments();

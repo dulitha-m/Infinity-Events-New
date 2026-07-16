@@ -8,14 +8,14 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 280px 280px;
+  grid-template-rows: repeat(3, 280px);
   gap: 4px; max-width: 1400px; margin: 0 auto;
 }
 .gallery-item:nth-child(1) { grid-column: span 4; grid-row: span 2; }
 .gallery-item:nth-child(2) { grid-column: span 4; }
 .gallery-item:nth-child(3) { grid-column: span 4; }
 .gallery-item:nth-child(4) { grid-column: span 8; }
-.gallery-item:nth-child(5) { grid-column: span 4; }
+.gallery-item:nth-child(5) { grid-column: span 8; }
 .gallery-item:nth-child(6) { grid-column: span 4; }
 
 .gallery-item { position: relative; overflow: hidden; }

@@ -45,12 +45,7 @@ export default function AdminDashboard() {
       {/* Sidebar */}
       <aside className="admin-sidebar">
         <div className="sidebar-logo">
-          <svg viewBox="0 0 48 28" fill="none" width="32" height="18">
-            <ellipse cx="14" cy="14" rx="10" ry="10" stroke="#00F5FF" strokeWidth="2.5" fill="none"/>
-            <ellipse cx="34" cy="14" rx="10" ry="10" stroke="#00F5FF" strokeWidth="2.5" fill="none"/>
-            <line x1="6" y1="5" x2="42" y2="23" stroke="#00F5FF" strokeWidth="2" opacity="0.6"/>
-          </svg>
-          <span>INFINITY</span>
+          <img src="/images/Logo.png" alt="Infinity Logo" className="sidebar-logo-img" />
         </div>
 
         <nav className="sidebar-nav">

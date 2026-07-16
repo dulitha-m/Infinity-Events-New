@@ -5,7 +5,7 @@ import './Hero.css';
 const SLIDES = [
   {
     id: 1,
-    img: '/images/popup_concerts.png',
+    img: '/images/Hero1.jpg',
     label: 'Live Entertainment',
     title: 'International\nConcerts',
     sub: 'Akon · Sean Paul · Priyanka Chopra',
@@ -13,35 +13,43 @@ const SLIDES = [
   },
   {
     id: 2,
-    img: '/images/popup_outdoor.png',
-    label: 'Mega Festivals',
-    title: 'Music\nFestivals',
-    sub: 'Sun Fest 2015 · Maldives Tourist Arrival Festival',
-    accent: '#C2185B',
-  },
-  {
-    id: 3,
-    img: '/images/popup_corporate.png',
-    label: 'Corporate & Brand',
-    title: 'Corporate\nExperiences',
-    sub: 'HSBC · Microsoft · Nestlé · Unilever · Toyota',
-    accent: '#38BDF8',
-  },
-  {
-    id: 4,
-    img: '/images/popup_state.png',
-    label: 'State & Government',
-    title: 'State\nProductions',
-    sub: 'CHOGM 2013 · South Asia\'s Largest Indoor LED Wall',
-    accent: '#7C3AED',
-  },
-  {
-    id: 5,
-    img: '/images/popup_fashion.png',
+    img: '/images/Fashion.jpg',
     label: 'Fashion & Pageants',
     title: 'Fashion\nShowcase',
     sub: 'Miss Universe Sri Lanka · Mister International SL',
     accent: '#C9973A',
+  },
+  {
+    id: 3,
+    img: '/images/Wedding.jpg',
+    label: 'Bespoke Planners',
+    title: 'Dream\nWeddings',
+    sub: 'Weddings by Carren Brown™ · Full-service concierge planning',
+    accent: '#9B30FF',
+  },
+  {
+    id: 4,
+    img: '/images/Social.jpg',
+    label: 'Elite Social',
+    title: 'Social\nEvents',
+    sub: 'VIP Red Carpets · Creative Theme Extravaganzas · Private Celebrations',
+    accent: '#FF2D78',
+  },
+  {
+    id: 5,
+    img: '/images/Wedding2.jpg',
+    label: 'Exquisite Settings',
+    title: 'Bespoke\nCathedrals',
+    sub: 'Meticulous details for a perfect, timeless ceremony',
+    accent: '#FFB800',
+  },
+  {
+    id: 6,
+    img: '/images/Art.jpg',
+    label: 'Visual Artistry',
+    title: 'Theatre\n& Arts',
+    sub: 'Projection mapping · Architectural lighting · National productions',
+    accent: '#00F5FF',
   },
 ];
 
@@ -138,7 +146,7 @@ export default function Hero() {
         <div
           key={s.id}
           className={`slide-bg ${i === current ? 'active' : ''} ${i === prev ? 'exiting' : ''}`}
-          style={{ backgroundImage: `url(${s.img})` }}
+          style={{ backgroundImage: `url("${s.img}")` }}
         />
       ))}
 

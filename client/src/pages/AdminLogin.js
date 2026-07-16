@@ -31,12 +31,7 @@ export default function AdminLogin() {
       <div className="login-glow" />
       <div className="login-box">
         <div className="login-logo">
-          <svg viewBox="0 0 48 28" fill="none" width="48" height="28">
-            <ellipse cx="14" cy="14" rx="10" ry="10" stroke="#00F5FF" strokeWidth="2.5" fill="none"/>
-            <ellipse cx="34" cy="14" rx="10" ry="10" stroke="#00F5FF" strokeWidth="2.5" fill="none"/>
-            <line x1="6" y1="5" x2="42" y2="23" stroke="#00F5FF" strokeWidth="2" opacity="0.6"/>
-          </svg>
-          <span className="login-brand">INFINITY</span>
+          <img src="/images/Logo.png" alt="Infinity Logo" className="login-logo-img" />
         </div>
         <h1 className="login-title">Admin Portal</h1>
         <p className="login-sub">Sign in to manage content</p>

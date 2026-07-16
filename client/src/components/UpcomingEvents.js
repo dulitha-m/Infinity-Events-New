@@ -60,7 +60,7 @@ export default function UpcomingEvents() {
                 className={`ue-hero-card ${i === activeIdx ? 'active' : ''}`}
                 style={{
                   backgroundImage: ev.imageUrl
-                    ? `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 100%), url(${ev.imageUrl})`
+                    ? `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 100%), url("${ev.imageUrl}")`
                     : undefined,
                   background: !ev.imageUrl
                     ? `linear-gradient(135deg, #1a0a00, #2a1500)`
@@ -133,7 +133,7 @@ export default function UpcomingEvents() {
                 {ev.imageUrl && (
                   <div
                     className="ue-card-img"
-                    style={{ backgroundImage: `url(${ev.imageUrl})` }}
+                    style={{ backgroundImage: `url("${ev.imageUrl}")` }}
                   />
                 )}
                 {!ev.imageUrl && (
