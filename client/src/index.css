@@ -58,6 +58,9 @@ button { cursor: none; }
 }
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 7vw, 96px);
+  font-size: clamp(32px, 8vw, 96px);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
   line-height: 0.92; letter-spacing: 2px; color: var(--white); margin-bottom: 32px;
 }
